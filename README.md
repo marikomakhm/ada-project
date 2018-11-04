@@ -1,61 +1,85 @@
-# Title
+# Who's the biggest tax evader?
 
 # Abstract
-A 150 word description of the project idea, goals, dataset used. What story you would like to tell and why? What's the motivation behind your project?
 
-To measure the growth of a society there are various metrics that can be used, for instance the happiness of the country (World Happiness Report) or GDP per capita. These metrics are affected by socioeconomic factors such as levels of education, unemployment, fertility rates, etc. In this project, we would like to study how these socioeconomic indicators of development impact the different metrics used to determine the growth of a country, and which indicators best represent the growth of a community. We will be using datasets provided by the UN and the World Bank to study the socioeconomic situations of countries worldwide.
+The Panama Papers are a collection of leaked documents revealing that a large number of offshore entities had been used for fraud, evading international sanctions and large-scale tax evasion. A majority of these entities are linked to well-known public figures, from politicians to footballers. Many of these politicians were even directly involved in fighting tax evasion in their own country, showing a level of hypocrisy and corruption never seen before. But how far does this scandal go, and which countries have been most affected by it?
+
+In this project, we will study which countries the people implicated in the Panama Papers come from and investigate the correlation with development indicators of these countries, using UN and World Bank datasets. We will be using indicators such as the Gini coefficient or the GDP per capita at PPP to attempt to explain the distribution of the number of entities involved in Panama Papers in each country. By studying the patterns of the countries involved in Panama Papers, we hope to better understand how to construct a healthier, more honest society.
 
 # Research questions
 We would like to address the following research questions:
 
-- how do we measure the growth of a country?
-
-- what is the impact of the education (literacy rates, enrolment in primary/secondary/tertiary education) in a country on its growth?
-- what is the impact of fertility rates of a country on its growth?
-- what is the impact of inflow/outflow of foreign migrants of a country on its growth?
+- which countries have the most and least tax evasion?
+- what does the distribution of the entities involved in Panama Papers look like?
+- to what extent are we able to link the proportion of entities involved in Panama Papers with:
+  - the political structure of a country?
+  - the internal inequality within a country?
+  - the development (HDI, Gini coefficient) of a country?
 
 # Dataset
 
-The datasets we intend to use are the following datasets provided by the UN and the World Bank:
+For this project, we will be using the Panama Papers dataset. We are going to study links between the distribution of the country of origin of the entities involved and various socioeconomic factors related to the country. To study this connection, we will also use datasets from the UN and the World Bank.
+
+### Panama Papers dataset
+We are using the standard dataset that is already on the server. In this section, we'll explain how the dataset is formatted and how we can exploit it.
+The data are spread over 5 files:
+
+#### panama_papers.nodes.entity.csv
+Contains the list of all the offshore entites that were discovered. It contains dozens of fields but the followings are really usefull to us:
+- node ID: unique identification of the entity
+- juridiction: information about which juridiction is applied to the offshore company.
+- severals dates: incorporation dates, inactivation dates, etc.
+
+#### panama_papers.nodes.intermediary.csv
+This file contains the lawyers and service providers who helped setting up offshore companies. 
+- node ID: unique identification of the intermediary
+- country: country of the intermediary
+- status: indicates whether the company is still active
+
+#### panama_papers.nodes.officer.csv
+The file contains the shareholders and the beneficiaries of the offshore companies.
+- node ID: unique identification of the officer
+- name: name of the officer
+
+#### panama_papers.nodes.address.csv
+Contains the address of the entities, officiers and intermediary.
+- node ID: unique identification of the address
+- address: full address. If we want to use it, we'll have to parse this field.
+- country code: country code of the address (string)
+
+#### panama_papers.edges.csv
+This is the most important file. It links all the above datasets together and allows us to understand the connections between them.
+
+- start ID: contains the start ID of an edge
+- end ID: contanis the end ID of an edge
+- type of edge: describe the edges (intermediary of, registered address, etc.)
+
+### Other datasets
+
+We intend to use the following datasets provided by the UN and the World Bank:
 
 UN datasets:
-
-- Gender Development Index: http://data.un.org/DocumentData.aspx?id=380
-- Gender Inequality Index: http://data.un.org/DocumentData.aspx?id=381
-- Data on refugees: http://data.un.org/Data.aspx?q=refugee&d=UNHCR&f=indID%3AType-Ref
-- Total fertility rate: http://data.un.org/Data.aspx?d=SOWC&f=inID%3a127
-- Net migration rate: http://data.un.org/Data.aspx?q=migration&d=PopDiv&f=variableID%3A85
 - GDP per capita, PPP: http://data.un.org/Data.aspx?d=WDI&f=Indicator_Code%3aNY.GDP.PCAP.PP.CD
 - GDP per capita: http://data.un.org/Data.aspx?q=gdp&d=SNAAMA&f=grID%3A101%3BcurrID%3AUSD%3BpcFlag%3A1
-- Trade of goods: http://data.un.org/Data.aspx?d=ComTrade&f=_l1Code%3A1
-- Population by literacy, age, sex and rural/urban residence: http://data.un.org/Data.aspx?d=POP&f=tableCode%3A31
+- HDI and its components: http://data.un.org/DocumentData.aspx?q=hdi&id=377
+- HDI trends, 1990–2014: http://data.un.org/DocumentData.aspx?q=hdi&id=378
 
 World Bank datasets:
+- Gini coefficients: https://data.worldbank.org/indicator/SI.POV.GINI
+- Income share held by highest 10%: https://data.worldbank.org/indicator/SI.DST.10TH.10
 
-- [datasets]
+Each of these datasets contains relevant data, dating from at least 2011 onwards. The datasets chosen are as complete as possible, each of them containing information for at least 120 countries.
 
-Each of these datasets contains relevant data, dating from 2011 onwards. The datasets chosen are as complete as possible, each of them containing information for at least 120 countries.
-
-We intend to clean the datasets, extracting the information that interests us. We will have to deal with countries that are not part of certain datasets, and decide if we want to study all countries worldwide or not. It would make no sense to study a country if we do not have sufficient information about it. However, we will have to evaluate the "sufficient information" threshold when doing data cleaning and merging the data based on each country.
-
-Something that is going to be crucial in our data processing, is choosing consistent country names, as countries can be recorded differently, for instance "Iran" can be recorded as "Islamic Republic of Iran".
-
-One dataset that we are particularly excited to use is about refugees, from the UNHCR statistical database. It has the following format:
-
-| Country or territory of asylum or residence | Country or territory of origin | Year | Refugees | Refugees assisted by UNHCR | Total refugees and people in refugee-like situations | Total refugees and people in refugee-like situations assisted by UNHCR |
-| ------------------------------------------- | ------------------------------ | ---- | -------- | -------------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| Afghanistan                                 | Iraq                           | 2016 | 1        | 1                          | 1                                                    | 1                                                            |
-| Afghanistan                                 | Pakistan                       | 2016 | 59737    | 59737                      | 59737                                                | 59737                                                        |
-| Angola                                      | Eritrea                        | 2016 | 34       |                            | 34                                                   |                                                              |
-| Oman                                        | Syrian Arab Rep.               | 2016 | 7        | 7                          | 7                                                    | 7                                                            |
-| Switzerland                                 | Nigeria                        | 2015 | 179      |                            | 179                                                  |                                                              |
-
-Here, we see that sometimes we obtain empty cells for the number of refugees assisted by UNHCR. In these cases, we would have to map the empty cells to 0 values, rather than simply remove them.
-
-List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
+We intend to clean these datasets, extracting the information that interests us. Something that is going to be crucial in our data processing is choosing consistent country names, as countries can be recorded differently, for instance "Iran" can be recorded as "Islamic Republic of Iran". We will base this on the country provided in the `panama_papers.nodes.address.csv` file.
 
 # A list of internal milestones up until project milestone 2
-Add here a sketch of your planning for the next project milestone.
+
+Here is the plan for the next project milestone:
+- Merge the datasets taken from the UN and World Bank on the country of interest
+- Visualize the country of origin of the people involved in Panama Papers
+- Visualize the development indicators taken from UN/WB datasets for each country
+- Analyze links between the data from the UN/WB and Panama Papers countries using visual and numerical tools
 
 # Questions for TA
-Add here some questions you have for us, in general or project-specific.
+
+No questions just yet! :smile: 
