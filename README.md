@@ -66,7 +66,7 @@ UN datasets:
 
 World Bank datasets:
 - Gini coefficients: https://data.worldbank.org/indicator/SI.POV.GINI
-- Income share held by highest 10%: https://data.worldbank.org/indicator/SI.DST.10TH.10
+- Income share held by highest 20%: https://data.worldbank.org/indicator/SI.DST.05TH.20
 
 Each of these datasets contains relevant data, dating from at least 2011 onwards. The datasets chosen are as complete as possible, each of them containing information for at least 120 countries.
 
