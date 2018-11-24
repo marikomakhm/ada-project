@@ -25,7 +25,7 @@ We are using the standard dataset that is already on the server. In this section
 The data are spread over 5 files:
 
 #### panama_papers.nodes.entity.csv
-Contains the list of all the offshore entites that were discovered. It contains dozens of fields but the followings are really usefull to us:
+Contains the list of all the offshore entites that were discovered. It contains dozens of fields but the following are really useful to us:
 - node ID: unique identification of the entity
 - juridiction: information about which juridiction is applied to the offshore company.
 - severals dates: incorporation dates, inactivation dates, etc.
@@ -42,7 +42,7 @@ The file contains the shareholders and the beneficiaries of the offshore compani
 - name: name of the officer
 
 #### panama_papers.nodes.address.csv
-Contains the address of the entities, officiers and intermediary.
+Contains the address of the entities, officiers and intermediaries.
 - node ID: unique identification of the address
 - address: full address. If we want to use it, we'll have to parse this field.
 - country code: country code of the address (string)
