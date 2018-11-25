@@ -67,6 +67,8 @@ UN datasets:
 World Bank datasets:
 - Gini coefficients: https://data.worldbank.org/indicator/SI.POV.GINI
 - Income share held by highest 20%: https://data.worldbank.org/indicator/SI.DST.05TH.20
+- Population of each country: https://data.worldbank.org/indicator/SP.POP.TOTL
+
 
 Each of these datasets contains relevant data, dating from at least 2011 onwards. The datasets chosen are as complete as possible, each of them containing information for at least 120 countries.
 
@@ -79,6 +81,13 @@ Here is the plan for the next project milestone:
 - Visualize the country of origin of the people involved in Panama Papers
 - Visualize the development indicators taken from UN/WB datasets for each country
 - Analyze links between the data from the UN/WB and Panama Papers countries using visual and numerical tools
+
+# A list of internal milestones up until project milestone 3
+- Find which socio-economic factors are correlated with the results we found so far, and how they are correlated
+- Display the links between the countries using a graph similar to the one found [here](https://plot.ly/python/lines-on-maps/)
+- Fix issues with certain countries (particularly small islands) not being displayed in the graph
+- Create better way of visualizing the data
+
 
 # Questions for TA
 
