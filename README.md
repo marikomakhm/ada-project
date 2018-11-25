@@ -15,6 +15,8 @@ We would like to address the following research questions:
   - the political structure of a country?
   - the internal inequality within a country?
   - the development (HDI, Gini coefficient) of a country?
+- are we able to link any of the trends with political events?
+- to what extent are we able to see a change in geographical location of entities involved in the scandal though time?
 
 # Dataset
 
