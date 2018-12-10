@@ -16,6 +16,18 @@ Switzerland has a strong reputation as a tax haven for many rich Russian and Bri
 
 ## What's in the Panama Papers?
 
+We had a total of five Panama Papers datasets at our disposition. These datasets represent a graph, with three datasets containing three types of nodes, as well as a dataset containing edges linking the nodes. The nodes are people and organizations involved in the Panama Papers. The fifth dataset contains the addresses of these peopleand organizations. Here's a breakdown on the three types of nodes we have:
+
+- **Entities:** offshore entities are companies, trusts or funds created by agents in low-tax jurisdictions that typically attract non-resident clients through preferential tax treatment. Agents are firms in offshore jurisdictions that manage offshore entities at their clients' request.
+- **Officers:** officers are people or companies that play some role in an offshore entity. These are typically shareholders and beneficiaries of the offshore companies.
+- **Intermediaries:** intermediaries are the lawyers and service providers who helped set up offshore entities.
+
+Source: https://offshoreleaks.icij.org/pages/faq
+
+
+
+
+
 - Explaining the dataset
   - Explain what addresses, entities, edges, officers intermediaries are
   - Say what the dataset sources are
