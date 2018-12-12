@@ -20,7 +20,8 @@ We had a total of five Panama Papers datasets at our disposal. These datasets re
 - **Intermediaries:** intermediaries are the lawyers and service providers who helped set up offshore entities.
 
 ## Which countries were involved?
-The very first question we asked ourselves was which countries were involved. Was it the usual suspects? Was it mostly rich countries? To try to answer it, we simply counted the number of nodes by country.
+The very first question we asked ourselves which countries were involved in the scandal and to which extend. Was it the usual suspects? Was it mostly rich countries? 
+*To try to answer it, we simply counted the number of nodes by country.*  (Change this)
 
 We get the following table:
 
