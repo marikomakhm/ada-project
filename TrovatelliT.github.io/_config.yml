@@ -1,0 +1,18 @@
+# Setup
+title:        Who's stealing all the money
+tagline:      A non scientific insight
+baseurl:      ""
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       Author name
+  url:        http://yourhomepage.com 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
