@@ -20,10 +20,8 @@ We had a total of five Panama Papers datasets at our disposal. These datasets re
 - **Intermediaries:** intermediaries are the lawyers and service providers who helped set up offshore entities.
 
 ## Which countries were involved?
-The very first question we asked ourselves which countries were involved in the scandal and to which extend. Was it the usual suspects? Was it mostly rich countries? 
-*To try to answer it, we simply counted the number of nodes by country.*  (Change this)
-
-We get the following table:
+The very first question we asked ourselves which countries were involved in the scandal and to which extend. Was it the usual suspects? Was it mostly rich countries?
+There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of nodes in the 3 datasets by country. This yields the following table:
 
 |Country Code |Name | Number of occurences |
 | --- | --- | --- |
@@ -35,7 +33,7 @@ We get the following table:
 |LUX|  Luxembourg |12983|
 |VGB | British Virgin Islands| 12368|
 |ARE | United Arab Emirates| 10392|
-|RUS| |Russia | 8389|
+|RUS |Russia | 8389|
 |USA|United States | 7281|
 |URY|     Uruguay | 7205|
 |IMN| Isle of Man |7087|
@@ -48,13 +46,22 @@ We get the following table:
 |COL|    Colombia|3310|
 |LIE|Liechtenstein|3266|
 
-If we plot this on a map, we get the following result:
+Or when plotted in a world map:
 
-(INSERT MAP HERE)
+(INSERT WORLD MAP YO)
 
-This seems to be a mix of different countries and we can't see much of a connection. However, some of this countries are quite large so it's expected they will be much larger. If we normalize it by population, we get the following results:
+By looking at this results, it seems to be a weird combination of large countries and tax havens.
 
-(INSERT TABLE HERE)
-(INSERT MAP HERE)
+We see little Switzerland almost in the lead, which seems to reinforce many of the cliches about the country. It seems cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and  British Virgin Islands are also present.
 
-We clearly see a trend here. All of this countries are the "usual suspects", of countries typically known as tax havens. We see Monaco, Liechtenstein, Seychelles, Luxembourg, 
+We also see that there are quite a large number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 20 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
+
+(INSERT NORMALIZED TABLE HERE)
+
+(INSERT WORLD MAP YO)
+
+This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman  and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
+
+This data indeed is corroborated by many news [reports](http://www.independent.com.mt/articles/2016-04-18/world-news/Panama-Papers-Tiny-British-Virgin-Islands-has-big-role-in-leaked-documents-6736156470) (FIND BETTER SOURCE), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
+
+So if population alone is not enough to explain the number of occurences, can other socio-economic factors explain this? Let's have a look.
