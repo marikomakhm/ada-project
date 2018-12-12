@@ -25,7 +25,28 @@ The very first question we asked ourselves which countries were involved in the 
 
 We get the following table:
 
-(INSERT TABLE HERE)
+|Country Code |Name | Number of occurences |
+| --- | --- | --- |
+|HKG| Hong Kong | 53475|
+|CHE| Switzerland | 43397|
+|CHN| China | 28101|
+|PAN| Panama | 21432|
+|GBR |United Kingdom| 15900|
+|LUX|  Luxembourg |12983|
+|VGB | British Virgin Islands| 12368|
+|ARE | United Arab Emirates| 10392|
+|RUS| |Russia | 8389|
+|USA|United States | 7281|
+|URY|     Uruguay | 7205|
+|IMN| Isle of Man |7087|
+|BHS|     Bahamas| 6532|
+|TWN|      Taiwan|6466|
+|SGP|   Singapore|6411|
+|CYP|      Cyprus|6405|
+|MCO|      Monaco|4670|
+|BRA|      Brazil|3806|
+|COL|    Colombia|3310|
+|LIE|Liechtenstein|3266|
 
 If we plot this on a map, we get the following result:
 
