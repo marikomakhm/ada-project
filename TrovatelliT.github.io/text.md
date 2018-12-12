@@ -1,3 +1,8 @@
+---
+layout: page
+title: Data
+permalink: /datastory2/
+---
 # Who's the biggest tax evader?
 ## Introduction
 The Panama Papers scandal erupted in 2015 after an anonymous whistleblower  nicknamed "John Doe" leaked over 11.5 million documents from a law firm in Panama called Mossack Fonseca.
