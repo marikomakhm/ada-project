@@ -49,7 +49,7 @@ There are many ways of trying to compute their involvement, but our first attemp
 Or when plotted in a world map:
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences.html></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences.html"></iframe>
 {% endraw %}
 
 
@@ -106,14 +106,26 @@ The results were the following:
 
 Most of the correlations are very low and the p-values are very high. However we can see that there is a weak/medium spearman correlation between the GDP per capita and the number of total occurrences in the Panama papers.
 
-(SCATTER PLOT WITH )
+Let's have a look at the scatter plot of GDP vs occurrences
 
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count.html"></iframe>
+{% endraw %}
 
-Let's clean the plot by deleting the outliers:
+There is no evident correlation even if the spearman coefficient suggests it.
+Most of the points have a very low number of occurrence in the Panama Papers and there is a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme.
 
-(SCATTER PLOT WITHOUT OUTLIER)
+Let's try to look for a correlation by removing outliers (`occurrences < 15000` and `GDP < 60000`)
 
-On this graph we can better see the pattern that the number are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_total.html"></iframe>
+{% endraw %}
+
+> Entity references
+	pearson :  0.2885194900278167 ; p-val:  0.0017659635013303292
+	spearman :  0.39995975573616904 ; p-val:  9.48762434027817e-06
+
+Even if on this graph the correlation are smaller, it is can better see the pattern that the number are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
 Richer countries have usually better infrastructure and services therefore tend to have higher tax and therefore have a system to ensure that the taxes are actually collected.
 This provides a much larger incentive for people to try to evade this systems by any means they can, which leads to scandals such as this one.
 
