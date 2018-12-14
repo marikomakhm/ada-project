@@ -81,13 +81,7 @@ Now we'll have a look at the scatter plot of GDP vs number of occurrences normal
 
 
 There is no evident correlation even if the spearman coefficient suggests it.
-Most of the points have a very low number of occurrence in the Panama Papers and there are a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme. As we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
-
-To do so we will only keep point that are in the bound : `q(.25) - 1.5 * IQR <= x <= q(.75) + 1.5 * IQR`.
-
-`IQR` being the interquartile range: `q(.75) - q(.25)`\
-`q(t)` being in the t-quantile
-
+Most of the points have a very low number of occurrence in the Panama Papers and there are a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme (British Virgin Islands, Luxembourg, Bermuda, etc.). As we're plotting the number of occurrences normalized, we would expect such countries to stand out. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_outlier.html"></iframe>
