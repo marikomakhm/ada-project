@@ -104,12 +104,12 @@ To analyse the correlation, we will use the Pearson and Spearman coefficients be
 The results were the following:
 (SHOW IN A TABLE THE DIFFERENT CORRELATION COUNTS VS INDICATOR)
 
-Most of the correlations are very low and the p-values are very high. However we can see that there is a weak/medium spearman correlation between the GDP per capita and the number of total occurrences in the Panama papers.
+Most of the correlations are very low and the p-values are very high. However we can see that there is a weak/medium Spearman correlation between the GDP per capita and the number of total occurrences in the Panama papers.
 
-### Gdp per capita
-The Gdp per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in this analyze later. 
+### GDP per capita
+The GDP per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in this analyze later. 
 
-Let's have a look at the scatter plot of GDP vs number of occurrence normalized in the Panama Papers.
+Now we'll have a look at the scatter plot of GDP vs number of occurrence normalized in the Panama Papers.
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_normalized.html"></iframe>
 {% endraw %}
@@ -133,7 +133,7 @@ To do so we will only keep point that are in the bound : `q(.25) - 1.5 * IQR <= 
 	spearman :  0.5385112508104001 ; p-val:  8.959416567754556e-09
 
 Even if on this graph the correlation are smaller, it is can better see the pattern that the number are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
-Richer countries have usually better infrastructure and services therefore tend to have higher tax and therefore have a system to ensure that the taxes are actually collected.
+Richer countries have usually better infrastructure and therefore have a system to ensure that the taxes are actually collected.
 This provides a much larger incentive for people to try to evade this systems by any means they can, which leads to scandals such as this one.
 
 
@@ -178,11 +178,11 @@ Let's see if there is a correlation between the HDI and the number of occurrence
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_hdi_count_outlier.html"></iframe>
+{% endraw %}
 
 	Total references
 	pearson :  0.23480729070912107 ; p-val:  0.021995627233654214
 	spearman :  0.48046530551766936 ; p-val:  8.324509404392334e-07
 
-{% endraw %}
-There seems to be a correlation as the graph and the spearman coefficient suggests.
-One of the reason could be that a country with higher HDI have generally more expensive infrastructures for health and education and therefore higher tax which can motivate people to hide money. Additionally, a country with higher HDI is home to richer people in average since the GDP per capita is also taken into account in the calculation of the HDI. 
+There seems to be a correlation as the plot and the Spearman coefficient suggest.
+One of the reasons could be that a country with higher HDI have generally a better infrastructures to ensure that the tax are paid . Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI. 
