@@ -116,9 +116,9 @@ Let's have a look at the scatter plot of GDP vs number of occurrence normalized 
 
  
 There is no evident correlation even if the spearman coefficient suggests it.
-Most of the points have a very low number of occurrence in the Panama Papers and there is a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme.
+Most of the points have a very low number of occurrence in the Panama Papers and there are a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme. As we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
 
-Let's try to look for a correlation by removing outliers. To do so we will only keep point that are in the bound : `q(.25) - 1.5 * IQR <= x <= q(.75) + 1.5 * IQR`.
+To do so we will only keep point that are in the bound : `q(.25) - 1.5 * IQR <= x <= q(.75) + 1.5 * IQR`.
 
 `IQR` being the interquartile range: `q(.75) - q(.25)`\
 `q(t)` being in the t-quantile
@@ -137,13 +137,15 @@ Richer countries have usually better infrastructure and services therefore tend 
 This provides a much larger incentive for people to try to evade this systems by any means they can, which leads to scandals such as this one.
 
 
-### Gini
-The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair, as this is generally heavily linked with corruption and tax evasion.
+### Impact of inequality
+In this section will analyze if there is a correlation between the number of occurrence in the Panama papers and between two different indicators that try to determine the inequality in a country.
+#### Gini
+The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person get the same income (When gini = 0). Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair, as this is generally heavily linked with corruption and tax evasion.
 
 This time we directly show the scatter plot without the outliers by using the techniques we described above.
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gini_count_outlier.html	"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gini_count_outlier.html"></iframe>
 {% endraw %}
 
 
@@ -156,6 +158,31 @@ As we can see in the table above, the correlation between the number of occurren
 
 We can then reject our initial hypothesis. It seems like there is no link between the inequality in a country and the number of references in the Panama Papers.
 
+This is surprising because intuitively we would imagine 
 This could be because:
 
 // TODO: say why gini doesn't work
+
+#### Income held by top 20%
+This index also measures inequality but it quantifies it differently by expressing the share of wealth held to the top 20% richest. We would expect similar results as for the Gini coefficient since  both indices are measuring inequality.
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
+{% endraw %}
+
+As we can observe, there is almost no correlation which is coherent with what we said before.
+
+### Human Development Index (HDI)
+The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
+Let's see if there is a correlation between the HDI and the number of occurrence in this affair.
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_hdi_count_outlier.html"></iframe>
+
+	Total references
+	pearson :  0.23480729070912107 ; p-val:  0.021995627233654214
+	spearman :  0.48046530551766936 ; p-val:  8.324509404392334e-07
+
+{% endraw %}
+There seems to be a correlation as the graph and the spearman coefficient suggests.
+One of the reason could be that a country with higher HDI have generally more expensive infrastructures for health and education and therefore higher tax which can motivate people to hide money. Additionally, a country with higher HDI is home to richer people in average since the GDP per capita is also taken into account in the calculation of the HDI. 
