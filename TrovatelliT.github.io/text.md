@@ -24,33 +24,14 @@ TODO: add diagram
 ## Which countries were involved?
 The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following table:
 
-|Country Code |Name | Number of occurrences |
-| --- | --- | --- |
-|HKG| Hong Kong | 53475|
-|CHE| Switzerland | 43397|
-|CHN| China | 28101|
-|PAN| Panama | 21432|
-|GBR |United Kingdom| 15900|
-|LUX|  Luxembourg |12983|
-|VGB | British Virgin Islands| 12368|
-|ARE | United Arab Emirates| 10392|
-|RUS |Russia | 8389|
-|USA|United States | 7281|
-|URY|     Uruguay | 7205|
-|IMN| Isle of Man |7087|
-|BHS|     Bahamas| 6532|
-|TWN|      Taiwan|6466|
-|SGP|   Singapore|6411|
-|CYP|      Cyprus|6405|
-|MCO|      Monaco|4670|
-|BRA|      Brazil|3806|
-|COL|    Colombia|3310|
-|LIE|Liechtenstein|3266|
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bat__occurrences.html"></iframe>
+{% endraw %}
 
 Or when plotted in a world map:
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurrences.html"></iframe>
 {% endraw %}
 
 By looking at these results, it seems that the most involved countries are a combination of the most populous countries in the world and tax havens.
@@ -61,31 +42,12 @@ We see little Switzerland almost in the lead, which seems to reinforce many of t
 
 We also see that there are quite a large number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 20 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
 
-|Country Code |Name | Number of occurrences |
-| --- | --- | --- |
-|VGB|British Virgin Islands|41.800730|
-|MCO|Monaco|12.246932|
-|GIB|Gibraltar|8.816617|
-|LIE|Liechtenstein|8.796832|
-|IMN|  Isle of Man|8.580942|
-|SYC|Seychelles|2.621526|
-|LUX|Luxembourg|2.333733|
-|KNA|Saint Kitts and Nevis|1.818046|
-|BHS|Bahamas|1.709191|
-|CYM|Cayman Islands|1.299601|
-|HKG|Hong Kong|0.739678|
-|AND|Andorra|0.706865|
-|BMU|Bermuda|0.667803|
-|CYP|Cyprus|0.555840|
-|PAN|Panama|0.548977|
-|BLZ|Belize|0.533987|
-|CHE|Switzerland|0.529965|
-|MLT|Malta|0.240244|
-|ATG|Antigua and Barbuda|0.239697|
-|VUT|Vanuatu|0.215955|
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences_per_hab.html"></iframe>
+{% endraw %}
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences_normalized.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurrences_per_hab.html"></iframe>
 {% endraw %}
 
 This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman  and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
