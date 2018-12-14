@@ -101,15 +101,10 @@ Now we will try to find a correlation between the amount of involvement in Panam
 - Gini coefficient (measures inequality)
 - Income share of the 20% richest
 
-To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by population size and the different factors. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if the results were similar to our "intuition".
-
-The results were the following:
-(SHOW IN A TABLE THE DIFFERENT CORRELATION COUNTS VS INDICATOR)
-
-Most of the correlations are very low and the p-values are very high. However we can see that there is a weak/medium Spearman correlation between the GDP per capita and the number of total occurrences in the Panama Papers.
+To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different factors. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
 
 ### GDP per capita
-The GDP per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in this analyze later. 
+The GDP per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in the analyze later. 
 
 Now we'll have a look at the scatter plot of GDP vs number of occurrences normalized in the Panama Papers.
 {% raw %}
