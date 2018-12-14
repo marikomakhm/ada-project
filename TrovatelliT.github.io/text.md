@@ -20,12 +20,10 @@ We had a total of five Panama Papers datasets at our disposal. These datasets re
 - **Intermediaries:** intermediaries are the lawyers and service providers who helped set up offshore entities.
 
 ## Which countries were involved?
-The very first question we asked ourselves which countries were involved in the scandal and to which extend. Was it the usual suspects? Was it mostly rich countries? 
-*To try to answer it, we simply counted the number of nodes by country.*  (Change this)
+The very first question we asked ourselves which countries were involved in the scandal and to which extend. Was it the usual suspects? Was it mostly rich countries?
+There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of nodes in the 3 datasets by country. This yields the following table:
 
-We get the following table:
-
-|Country Code |Name | Number of occurences |
+|Country Code |Name | Number of occurrences |
 | --- | --- | --- |
 |HKG| Hong Kong | 53475|
 |CHE| Switzerland | 43397|
@@ -35,7 +33,7 @@ We get the following table:
 |LUX|  Luxembourg |12983|
 |VGB | British Virgin Islands| 12368|
 |ARE | United Arab Emirates| 10392|
-|RUS| |Russia | 8389|
+|RUS |Russia | 8389|
 |USA|United States | 7281|
 |URY|     Uruguay | 7205|
 |IMN| Isle of Man |7087|
@@ -48,13 +46,143 @@ We get the following table:
 |COL|    Colombia|3310|
 |LIE|Liechtenstein|3266|
 
-If we plot this on a map, we get the following result:
+Or when plotted in a world map:
 
-(INSERT MAP HERE)
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences.html"></iframe>
+{% endraw %}
 
-This seems to be a mix of different countries and we can't see much of a connection. However, some of this countries are quite large so it's expected they will be much larger. If we normalize it by population, we get the following results:
 
-(INSERT TABLE HERE)
-(INSERT MAP HERE)
+By looking at this results, it seems to be a weird combination of large countries and tax havens.
 
-We clearly see a trend here. All of this countries are the "usual suspects", of countries typically known as tax havens. We see Monaco, Liechtenstein, Seychelles, Luxembourg, 
+We see little Switzerland almost in the lead, which seems to reinforce many of the cliches about the country. It seems cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and  British Virgin Islands are also present. And very near the top, we see Panama, which makes sense given the name.
+
+We also see that there are quite a large number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 20 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
+
+|Country Code |Name | Number of occurrences |
+| --- | --- | --- |
+|VGB|British Virgin Islands|41.800730|
+|MCO|Monaco|12.246932|
+|GIB|Gibraltar|8.816617|
+|LIE|Liechtenstein|8.796832|
+|IMN|  Isle of Man|8.580942|
+|SYC|Seychelles|2.621526|
+|LUX|Luxembourg|2.333733|
+|KNA|Saint Kitts and Nevis|1.818046|
+|BHS|Bahamas|1.709191|
+|CYM|Cayman Islands|1.299601|
+|HKG|Hong Kong|0.739678|
+|AND|Andorra|0.706865|
+|BMU|Bermuda|0.667803|
+|CYP|Cyprus|0.555840|
+|PAN|Panama|0.548977|
+|BLZ|Belize|0.533987|
+|CHE|Switzerland|0.529965|
+|MLT|Malta|0.240244|
+|ATG|Antigua and Barbuda|0.239697|
+|VUT|Vanuatu|0.215955|
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/total_occurrences_normalized.html"></iframe>
+{% endraw %}
+
+This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman  and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
+
+This data indeed is corroborated by many news [reports](http://www.independent.com.mt/articles/2016-04-18/world-news/Panama-Papers-Tiny-British-Virgin-Islands-has-big-role-in-leaked-documents-6736156470) (FIND BETTER SOURCE), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
+
+So if population alone is not enough to explain the number of occurrences, can other socio-economic factors explain this? Let's have a look.
+
+## Social-economic factors
+Now we will try to find a correlation between the amount of involvement in Panama Papers of the three different types of node and different social economic factors. We considered several different socio-economic factors, but ultimately we decided to focus on:
+- Human Development Index
+- GDP per capita
+- Gini coefficient (measures inequality)
+- Income share of the 20% richest
+
+To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by population size and the different factors. We will also look at the p-value's to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if the results were similar to our "intuition".
+
+The results were the following:
+(SHOW IN A TABLE THE DIFFERENT CORRELATION COUNTS VS INDICATOR)
+
+Most of the correlations are very low and the p-values are very high. However we can see that there is a weak/medium spearman correlation between the GDP per capita and the number of total occurrences in the Panama papers.
+
+### Gdp per capita
+The Gdp per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in this analyze later. 
+
+Let's have a look at the scatter plot of GDP vs number of occurrence normalized in the Panama Papers.
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_normalized.html"></iframe>
+{% endraw %}
+
+ 
+There is no evident correlation even if the spearman coefficient suggests it.
+Most of the points have a very low number of occurrence in the Panama Papers and there are a few outliers. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme. As we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
+
+To do so we will only keep point that are in the bound : `q(.25) - 1.5 * IQR <= x <= q(.75) + 1.5 * IQR`.
+
+`IQR` being the interquartile range: `q(.75) - q(.25)`\
+`q(t)` being in the t-quantile
+
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_outlier.html"></iframe>
+{% endraw %}
+
+	Total references
+	pearson :  0.12165059315598446 ; p-val:  0.23033496857175298
+	spearman :  0.5385112508104001 ; p-val:  8.959416567754556e-09
+
+Even if on this graph the correlation are smaller, it is can better see the pattern that the number are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
+Richer countries have usually better infrastructure and services therefore tend to have higher tax and therefore have a system to ensure that the taxes are actually collected.
+This provides a much larger incentive for people to try to evade this systems by any means they can, which leads to scandals such as this one.
+
+
+### Impact of inequality
+In this section will analyze if there is a correlation between the number of occurrence in the Panama papers and between two different indicators that try to determine the inequality in a country.
+#### Gini
+The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person get the same income (When gini = 0). Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair, as this is generally heavily linked with corruption and tax evasion.
+
+This time we directly show the scatter plot without the outliers by using the techniques we described above.
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gini_count_outlier.html"></iframe>
+{% endraw %}
+
+
+	Total references
+	pearson :  -0.027051310386034675 ; p-val:  0.8177976273022307
+	spearman :  -0.09558222096389055 ; p-val:  0.41465273285911763
+
+
+As we can see in the table above, the correlation between the number of occurrence and the Gini coefficient is not really relevant as the high p-value suggests. 
+
+We can then reject our initial hypothesis. It seems like there is no link between the inequality in a country and the number of references in the Panama Papers.
+
+This is surprising because intuitively we would imagine 
+This could be because:
+
+// TODO: say why gini doesn't work
+
+#### Income held by top 20%
+This index also measures inequality but it quantifies it differently by expressing the share of wealth held to the top 20% richest. We would expect similar results as for the Gini coefficient since  both indices are measuring inequality.
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
+{% endraw %}
+
+As we can observe, there is almost no correlation which is coherent with what we said before.
+
+### Human Development Index (HDI)
+The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
+Let's see if there is a correlation between the HDI and the number of occurrence in this affair.
+
+{% raw %}
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_hdi_count_outlier.html"></iframe>
+
+	Total references
+	pearson :  0.23480729070912107 ; p-val:  0.021995627233654214
+	spearman :  0.48046530551766936 ; p-val:  8.324509404392334e-07
+
+{% endraw %}
+There seems to be a correlation as the graph and the spearman coefficient suggests.
+One of the reason could be that a country with higher HDI have generally more expensive infrastructures for health and education and therefore higher tax which can motivate people to hide money. Additionally, a country with higher HDI is home to richer people in average since the GDP per capita is also taken into account in the calculation of the HDI. 
