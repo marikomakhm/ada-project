@@ -146,7 +146,7 @@ TODO: socioeconomic factors conclusion
 
 We've studied the involvement of each country in Panama Papers, but we know that a significant part of the information about countries involved resides in how they interact with other countries involved in the affair. Let's have a look at how the countries interact, shall we?
 
-## International links
+## Making connections
 
 One of the most representative measures of displaying international links is to do so on a world map. Below, we display a world map with undirected edges representing the number of connections between any two countries, with the width indicating the number of connections:
 
@@ -166,10 +166,18 @@ Although this representation of international edges gives us an idea of who inte
 
 #### Who's at the center of it all?
 
-
+We want to know which country is at the center of most links. We display the international links between countries using a network representation, where each country is represented by a node and the links between countries are the edges. The size of a node is determined by its betweenness centrality, which is a measure of how central a node is, based on how often it acts as a bridge between any two other nodes in a shortest path. The opacity of an edge represents its strength, or the number of connections. Let's have a look at what this gives us:
 
 {% raw %}
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/international_links_network.html"></iframe>
 
 {% endraw %}
+
+It looks like Christmas!
+
+Turns out Hong Kong is the most central country, closely followed by Switzerland, and then the UK. Having seen the variety of international connections going through these countries in the previous graph, it isn't surprising. What we didn't expect, however, was that the next three largest nodes would be UAE, Russia and Jersey. China is barely even visible, as well as Panama, with low centrality.
+
+## So, where should we look?
+
+- 
