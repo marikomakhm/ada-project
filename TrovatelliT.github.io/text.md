@@ -29,13 +29,13 @@ Now that we know what we have to work with, let's have a look at what it tells u
 
 ## Which countries were involved?
 
-The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following table:
+The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways to quantify their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country. This yields the following bar chart:
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences.html"></iframe>
 {% endraw %}
 
-Or when plotted in a world map:
+Or, when plotted in a world map:
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurrences.html"></iframe>
@@ -43,11 +43,9 @@ Or when plotted in a world map:
 
 By looking at these results, it seems that the most involved countries are a combination of the most populous countries in the world and tax havens.
 
-(TODO: read text from here onwards)
+We see little Switzerland almost in the lead, which seems to reinforce many of the clichés about the country. It seems that cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and British Virgin Islands are also present. And very near the top, we see Panama, which makes sense given the name of this affair.
 
-We see little Switzerland almost in the lead, which seems to reinforce many of the clichés about the country. It seems cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and British Virgin Islands are also present. And very near the top, we see Panama, which makes sense given the name.
-
-We also see that there are quite a large number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 20 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
+On the map, we also see that there is a significant presence of geographically large countries, such as China, United States and Brazil. This isn't unexpected, as big countries tend to have larger populations and will thus naturally have more people involved in Panama Papers when compared to countries with small populations. However, this isn't always the case, as we can see that India didn't even manage to crack the top 15 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences_per_hab.html"></iframe>
@@ -57,11 +55,11 @@ We also see that there are quite a large number of very large countries, such as
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurences_per_hab.html"></iframe>
 {% endraw %}
 
-This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
+This data is much easier to interpret. We see that almost all of the countries on the top 15 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both top 15 lists shows that it was surely heavily involved in this affair.
 
 This data indeed is corroborated by many news [reports](http://www.independent.com.mt/articles/2016-04-18/world-news/Panama-Papers-Tiny-British-Virgin-Islands-has-big-role-in-leaked-documents-6736156470) (FIND BETTER SOURCE), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
 
-So if population alone is not enough to explain the number of occurrences, can other socio-economic factors explain this? Let's have a look.
+So, if population alone is not enough to explain the involvement of a country in Panama Papers, can other socioeconomic factors explain this? Let's have a look.
 
 ## Socioeconomic factors
 Now we will try to find a correlation between the amount of involvement in Panama Papers of the three different types of node and different socioeconomic factors. We considered several different socioeconomic factors, but ultimately we decided to focus on:
