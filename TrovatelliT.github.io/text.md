@@ -133,7 +133,6 @@ One of the reasons for this could be that countries with higher HDI generally ha
 
 Or maybe it's simply that rich people prefer to live in developed countries? 
 
----
 Having looked at multiple socioeconomic development indicators, we saw that the wealth inequality is not at all correlated to the presence of a country in Panama Papers, which was surprising. However, there is a noticeable correlation with a country's presence, when studying GDP per capita and HDI.
 
 Maybe we can't find out much about the countries involved by studying socioeconomic indicators, but we are convinced that we can find a significant amount of information about countries involved by studying how they interact with other countries in the affair. Let's have a look at these links, shall we?
