@@ -90,11 +90,7 @@ Most of the points have a very low number of occurrence in the Panama Papers and
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_outlier.html"></iframe>
 {% endraw %}
 
-	Total references
-	pearson :  0.12165059315598446 ; p-val:  0.23033496857175298
-	spearman :  0.5385112508104001 ; p-val:  8.959416567754556e-09
-
-Even if on this graph the correlation are smaller, it is can better see the pattern that the number are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
+Even if on this graph the correlation are smaller, it is can better see the pattern that the numbers are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
 Richer countries have usually better infrastructure and therefore have a strong system to ensure that the taxes are actually collected.
 This provides a larger incentive for rich people to try to evade this systems by any means they can, which leads to scandals such as this one.
 
