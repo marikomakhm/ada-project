@@ -1,7 +1,8 @@
+---
 layout: page
 title: Data
 permalink: /datastory2/
-
+---
 # Hide and seek: the money edition
 
 ## Introduction
@@ -73,7 +74,7 @@ Now we will try to find a correlation between the amount of involvement in Panam
 Those datasets come from reliable sources: the [United Nations](http://data.un.org/)
  and the [World Bank](https://data.worldbank.org/).
 
-To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different factors. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
+To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different indices. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
 
 ### GDP per capita
 The GDP per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in the analyze later. 
@@ -129,11 +130,13 @@ This index also measures inequality but it quantifies it differently by expressi
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
 {% endraw %}
 
-As we can observe, there is almost no correlation which is coherent with what we said observed for the Gini coefficient.
+As we can observe, there is almost no correlation which is coherent with what we said observed for the Gini coefficient.  
+Unfortunately, we do not get anymore insight by using this metric when studying the involvement of a country in Panama Papers.
+
 
 #### Human Development Index (HDI)
 
-The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
+The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen to compute the index.  \
 We now observe if there is a correlation between the HDI and the number of occurrence in this affair.
 
 {% raw %}
@@ -145,9 +148,13 @@ We now observe if there is a correlation between the HDI and the number of occur
 	spearman :  0.48046530551766936 ; p-val:  8.324509404392334e-07
 
 There seems to be a correlation as the plot and the Spearman coefficient suggest.
+This is map were we can best visually see the correlation. It seems that for an $\text{HDI} \geq 0.65$ there is a big increase in the number of occurrences in the Panama Papers.
+
+
 One of the reasons could be that a country with higher HDI have generally a better infrastructures to ensure that the tax are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
 
-TODO: socioeconomic factors conclusion
+--- 
+In this section we studied the impact of socioeconomic factor in the way countries are involved in the Panama papers. We saw that we couldn't show that the degree of inequality within a country influenced how tied to this affair a country was. However we saw that there is a medium a correlation with the GDP per capita and with the HDI as well.
 
 We've studied the involvement of each country in Panama Papers, but we know that a significant part of the information about countries involved resides in how they interact with other countries involved in the affair. Let's have a look at how the countries interact, shall we?
 
