@@ -1,13 +1,14 @@
+---
 layout: page
 title: Data
 permalink: /datastory2/
-
+---
 # Hide and seek: the money edition
 
 ## Introduction
 The Panama Papers scandal erupted in 2015 after an anonymous whistle-blower nicknamed "John Doe" leaked over 11.5 million documents from a law firm in Panama called Mossack Fonseca. The documents, published by the International Consortium of Investigative Journalists, revealed a huge web of over 214'488 shell companies, that were partially used for the purpose of fraud, tax evasion and escaping international sanctions.
 
-The documents also implicated several high profile personalities in the affair, such as sportspeople, actors and even the Queen of England. They also showed that several people and companies blacklisted by the U.S. government, for crimes such as collaborating with drug lords, terrorists or "rogue nations" such as Iran and North Korea, used these shell companies to escape sanctions. More importantly, they revealed that a large number of politicians, many of whom were campaigning on anti-corruption platforms, were also involved. Some notable mentions were the prime minister of Iceland, the king of Saudi Arabia, former British Prime Minister David Cameron, and Chinese President Xi Jinping.
+The documents also implicated several high-profile personalities in the affair, such as sportspeople, actors and even the Queen of England. They also showed that several people and companies blacklisted by the U.S. government, for crimes such as collaborating with drug lords, terrorists or "rogue nations" such as Iran and North Korea, used these shell companies to escape sanctions. More importantly, they revealed that a large number of politicians, many of whom were campaigning on anti-corruption platforms, were also involved. Some notable mentions were the prime minister of Iceland, the king of Saudi Arabia, former British Prime Minister David Cameron, and Chinese President Xi Jinping.
 
 The whistle-blower claimed that his reasons for leaking the documents were primarily the growing income inequality worldwide and his newfound understanding of the injustices and corruption that were taking place. This begs the question, can we explain the involvement of a country in this affair by studying socioeconomic indicators? Is it simply high taxes that led these poor rich people to hide their money away? Are people in richer countries more likely to be involved? Is it really Panama that's at the center of all of this? These are a few of the questions that we'll try to answer by analyzing Panama Papers data.
 
@@ -29,7 +30,7 @@ Now that we know what we have to work with, let's have a look at what it tells u
 
 ## Which countries were involved?
 
-The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following table:
+The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following bar plot:
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences.html"></iframe>
@@ -41,13 +42,13 @@ Or when plotted in a world map:
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurrences.html"></iframe>
 {% endraw %}
 
-By looking at these results, it seems that the most involved countries are a combination of the most populous countries in the world and tax havens.
+By looking at these results, it seems that the most involved countries are a combination of the most populated countries in the world and tax havens.
 
 (TODO: read text from here onwards)
 
-We see little Switzerland almost in the lead, which seems to reinforce many of the clichés about the country. It seems cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and British Virgin Islands are also present. And very near the top, we see Panama, which makes sense given the name.
+We see little Switzerland almost in the lead, which seems to reinforce many of the clichés about the country. It seems cheese and watches are not the only thing Swiss people are good at. Similarly, Monaco, Luxembourg and British Virgin Islands are also present. And very near the top, we see Panama, which makes sense given the name of this affair.
 
-We also see that there are quite a large number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 20 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
+We also see that there is a significant number of very large countries, such as China, United States and Brazil. This however, is to be expected, as very large countries will naturally have more occurrences. Interestingly, this is not always the case, as we see India didn't even manage to crack the Top 15 list, even though it's the second most populated country in the world. This suggests that population alone doesn't tell the whole story, but we will look at this later. For now, let us look at the same data but normalized by population:
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences_per_hab.html"></iframe>
@@ -57,11 +58,12 @@ We also see that there are quite a large number of very large countries, such as
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurences_per_hab.html"></iframe>
 {% endraw %}
 
-This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
+This data is much easier to interpret. We see that almost all the countries on the Top 15 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 15 lists shows that it was surely heavily involved in this affair.
 
 This data indeed is corroborated by many news [reports](http://www.independent.com.mt/articles/2016-04-18/world-news/Panama-Papers-Tiny-British-Virgin-Islands-has-big-role-in-leaked-documents-6736156470) (FIND BETTER SOURCE), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
 
-So if population alone is not enough to explain the number of occurrences, can other socio-economic factors explain this? Let's have a look.
+So, if population alone is not enough to explain the number of occurrences, can other socio-economic factors explain this? Let's have a look.
+
 
 ## Socioeconomic factors
 Now we will try to find a correlation between the amount of involvement in Panama Papers of the three different types of node and different socioeconomic factors. We considered several different socioeconomic factors, but ultimately we decided to focus on:
@@ -73,7 +75,7 @@ Now we will try to find a correlation between the amount of involvement in Panam
 Those datasets come from reliable sources: the [United Nations](http://data.un.org/)
  and the [World Bank](https://data.worldbank.org/).
 
-To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different factors. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
+To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different indices. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
 
 ### GDP per capita
 The GDP per capita is the value of all the goods and services produced by a country in one year. It therefore represents approximately how rich a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in the analyze later. 
@@ -129,11 +131,13 @@ This index also measures inequality but it quantifies it differently by expressi
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
 {% endraw %}
 
-As we can observe, there is almost no correlation which is coherent with what we said observed for the Gini coefficient.
+As we can observe, there is almost no correlation which is coherent with what we said observed for the Gini coefficient.  
+Unfortunately, we do not get anymore insight by using this metric when studying the involvement of a country in Panama Papers.
+
 
 #### Human Development Index (HDI)
 
-The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
+The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen to compute the index.  \
 We now observe if there is a correlation between the HDI and the number of occurrence in this affair.
 
 {% raw %}
@@ -145,9 +149,13 @@ We now observe if there is a correlation between the HDI and the number of occur
 	spearman :  0.48046530551766936 ; p-val:  8.324509404392334e-07
 
 There seems to be a correlation as the plot and the Spearman coefficient suggest.
+This is map were we can best visually see the correlation. It seems that for an $\text{HDI} \geq 0.65$ there is a big increase in the number of occurrences in the Panama Papers.
+
+
 One of the reasons could be that a country with higher HDI have generally a better infrastructures to ensure that the tax are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
 
-TODO: socioeconomic factors conclusion
+--- 
+In this section we studied the impact of socioeconomic factor in the way countries are involved in the Panama papers. We saw that we couldn't show that the degree of inequality within a country influenced how tied to this affair a country was. However we saw that there is a medium a correlation with the GDP per capita and with the HDI as well.
 
 We've studied the involvement of each country in Panama Papers, but we know that a significant part of the information about countries involved resides in how they interact with other countries involved in the affair. Let's have a look at how the countries interact, shall we?
 
