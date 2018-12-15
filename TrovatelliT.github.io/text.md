@@ -63,6 +63,9 @@ Now we will try to find a correlation between the amount of involvement in Panam
 - Gini coefficient (measures inequality)
 - Income share of the 20% richest
 
+Those datasets come from reliable sources: the [United Nations](http://data.un.org/)
+ and the [World Bank](https://data.worldbank.org/).
+
 To analyse the correlation, we will use the Pearson and Spearman coefficients between the number of occurrences normalized by populations size and the different factors. We will also look at the p-values to determine the degree of confidence in our analysis. We decided to use the number of occurrence in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population. Additionally, we also plotted these different results to see if they were similar to our "intuition".
 
 ### GDP per capita
@@ -94,7 +97,7 @@ This provides a much larger incentive for people to try to evade this systems by
 ### Impact of inequality
 In this section will analyze if there is a correlation between the number of occurrence in the Panama papers and between two different indicators that try to determine the inequality in a country.
 #### Gini
-The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person get the same income (When gini = 0). Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair, as this is generally heavily linked with corruption and tax evasion.
+The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person get the same income (When gini = 0).
 
 This time we directly show the scatter plot without the outliers by using the techniques we described above.
 
@@ -108,14 +111,9 @@ This time we directly show the scatter plot without the outliers by using the te
 	spearman :  -0.09558222096389055 ; p-val:  0.41465273285911763
 
 
-As we can see in the table above, the correlation between the number of occurrence and the Gini coefficient is not really relevant as the high p-value suggests. 
+We can see that there is almost no correlation between those two variables. Which is surprising !
+Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair. As the tax evasion are higher in those countries, the redistribution of wealth is reduced.
 
-We can then reject our initial hypothesis. It seems like there is no link between the inequality in a country and the number of references in the Panama Papers.
-
-This is surprising because intuitively we would imagine 
-This could be because:
-
-// TODO: say why gini doesn't work
 
 #### Income held by top 20%
 This index also measures inequality but it quantifies it differently by expressing the share of wealth held to the top 20% richest. We would expect similar results as for the Gini coefficient since  both indices are measuring inequality.
@@ -124,12 +122,12 @@ This index also measures inequality but it quantifies it differently by expressi
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
 {% endraw %}
 
-As we can observe, there is almost no correlation which is coherent with what we said before.
+As we can observe, there is almost no correlation which is coherent with what we said observed for the Gini coefficient.
 
 #### Human Development Index (HDI)
 
 The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
-Let's see if there is a correlation between the HDI and the number of occurrence in this affair.
+We now observe if there is a correlation between the HDI and the number of occurrence in this affair.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_hdi_count_outlier.html"></iframe>
