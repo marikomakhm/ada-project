@@ -25,7 +25,7 @@ TODO: add diagram
 The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following table:
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar__occurrences.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/bar_occurrences.html"></iframe>
 {% endraw %}
 
 Or when plotted in a world map:
@@ -47,7 +47,7 @@ We also see that there are quite a large number of very large countries, such as
 {% endraw %}
 
 {% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurrences_per_hab.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/map_occurences_per_hab.html"></iframe>
 {% endraw %}
 
 This data is much easier to interpret. We see that almost all of the countries on the top 20 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman  and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both Top 20 lists shows that it was surely heavily involved in this affair.
