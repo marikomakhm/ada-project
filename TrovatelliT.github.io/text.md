@@ -9,7 +9,7 @@ The Panama Papers scandal erupted in 2015 after an anonymous whistle-blower nick
 
 The documents also implicated several high profile personalities in the affair, such as sportspeople, actors and even the Queen of England. They also showed that several people and companies blacklisted by the U.S. government, for crimes such as collaborating with drug lords, terrorists or "rogue nations" such as Iran and North Korea, used these shell companies to escape sanctions. More importantly, they revealed that a large number of politicians, many of whom were campaigning on anti-corruption platforms, were also involved. Some notable mentions were the prime minister of Iceland, the king of Saudi Arabia, former British Prime Minister David Cameron, and Chinese President Xi Jinping.
 
-The whistle-blower claimed his reasons for leaking the documents was the growing income inequality and an understanding of the injustices and corruption that were taking place. But this begs the question, can we explain the involvement in this affair using socioeconomic factors? Is it simply high taxes that led these poor rich people to hide their money away? Are people in richer countries more likely to be involved? What about more corrupt countries? How are the people implicated in this affair linked? These are a few of the questions we'll try to answer in this DATA STORY. (TODO)
+The whistle-blower claimed that his reasons for leaking the documents were primarily the growing income inequality worldwide and his newfound understanding of the injustices and corruption that were taking place. This begs the question, can we explain the involvement of a country in this affair by studying socioeconomic indicators? Is it simply high taxes that led these poor rich people to hide their money away? Are people in richer countries more likely to be involved? Is it really Panama that's at the center of all of this? These are a few of the questions that we'll try to answer by analyzing Panama Papers data.
 
 ## What was in the data?
 We had a total of five Panama Papers datasets at our disposal. These datasets represent a graph, with three datasets containing three distinct types of nodes, as well as a dataset containing edges linking the nodes. The nodes are people and organizations involved in the Panama Papers. The fifth dataset contains the addresses of these people and organizations. Here's a breakdown on the three types of nodes we have:
@@ -153,7 +153,7 @@ We've studied the involvement of each country in Panama Papers, but we know that
 
 ## Making connections
 
-One of the most representative measures of displaying international links is to do so on a world map. Below, we display a world map with undirected edges representing the number of connections between any two countries, with the width indicating the number of connections:
+One of the most representative measures of displaying international links is using a world map. Below, we display a world map with undirected edges representing the number of connections between any two countries, with the width indicating the number of connections:
 
 {% raw %}
 
@@ -161,7 +161,7 @@ One of the most representative measures of displaying international links is to 
 
 {% endraw %}
 
-There is a clear transatlantic bridge being built between Central America and Central Europe. This isn't surprising, considering that a large number of tax havens are situated in Central America and the Channel Islands (todo: is this true), as well as Mossack Fonseca being based in Panama, and Switzerland's global tax haven reputation.
+There is a clear transatlantic bridge being built between Central America and Central Europe. This isn't surprising, considering that a large number of tax havens are situated in Central America and the Channel Islands, as well as Mossack Fonseca being based in Panama, and Switzerland's global tax haven reputation.
 
 There's also a noticeable edge between China and Hong Kong. Having studied the data, this is majorly due to over 20000 edges originating in China and going to Hong Kong, justifying the magnitude of the edge. Interestingly, China appears to significantly rely on Hong Kong for all business stuff (todo: find a word).
 
