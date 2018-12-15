@@ -61,87 +61,82 @@ This data indeed is corroborated by many news [reports](http://www.independent.c
 So, if population alone is not enough to explain the involvement of a country in Panama Papers, can other socioeconomic factors explain this? Let's have a look.
 
 ## Socioeconomic factors
-Now we will try to find a correlation between the amount of involvement in Panama Papers of the three different types of node and different socioeconomic factors. We considered several different socioeconomic factors, but ultimately we decided to focus on:
+Now we will study the correlations between the amount of involvement in Panama Papers of different countries and different socioeconomic development indicators. We considered several different socioeconomic factors, but ultimately we decided to focus on the following ones:
 - Human Development Index
 - GDP per capita
-- Gini coefficient (measures inequality)
-- Income held by the 20% richest
+- Gini coefficient
+- Income held by the richest 20% of the population
 
-Those datasets come from reliable sources: the [United Nations](http://data.un.org/)
- and the [World Bank](https://data.worldbank.org/).
+We obtained these datasets from the [United Nations](http://data.un.org/) and the [World Bank](https://data.worldbank.org/) open data websites.
 
-We will now show the plot of the correlation of those different indices with the number of occurrences in the Panama Papers and see if our "intuition" is correct. We decided to use the number of occurrences in the Panama Papers normalized by the population size to avoid the bias brought by country that have a large population as discussed above.
+We will now display scatter plots, which will show the correlation of these different indicators with the number of occurrences in the Panama Papers to see if our intuition is correct. We decided to use the number of occurrences in the Panama Papers of a country normalized by its population size to avoid the bias brought by countries that have large populations, as discussed above.
 
 
 ### GDP per capita
-The GDP per capita is the value of all the goods and services produced by a country in one year normalized by the population size. It therefore represents approximately how rich a the citizen of a country are. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in the analyze later. 
+GDP per capita is the value of all the goods and services produced by a country in one year normalized by the population size. It therefore represents approximately how rich a citizen of a country is. We chose to use this indicator because we thought that richer people might have more incentive to try to evade the tax system. We will go deeper in this analysis later on.
 
-Now we'll have a look at the scatter plot of GDP vs number of occurrences normalized in the Panama Papers.
+Now, we'll have a look at the scatter plot of GDP vs number of occurrences normalized in the Panama Papers:
 {% raw %}
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_normalized.html"></iframe>
 {% endraw %}
 
-
-There is no evident correlation even if the spearman coefficient suggests it.
-Most of the points have a very low number of occurrence in the Panama Papers and there are a few outliers that are distorting the plot. Those outliers are again mainly either the fiscal paradise or the country that were involved in setting up this scheme (British Virgin Islands, Luxembourg, Bermuda, etc.). As we're plotting the number of occurrences normalized, we would expect such countries to stand out because they have a small population and a very high involvement in the affair. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
+There is no evident correlation even if the Spearman coefficient suggests it. Most of the countries have a relatively low number of occurrences in the Panama Papers and there are a few outliers that are significantly distorting the plot. Those outliers are again mainly either fiscal paradises or countries that were involved in Panama Papers for reasons of tax avoidance (British Virgin Islands, Luxembourg, Bermuda, etc.). As the plot shows the number of occurrences normalized by population, we would expect such countries to stand out because they have a small population and a very high involvement in the affair. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_outlier.html"></iframe>
 {% endraw %}
 
-Even if on this graph the correlation are smaller, it is can better see the pattern that the numbers are suggesting. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict.
-Richer countries have usually better infrastructure and therefore have a strong system to ensure that the taxes are actually collected.
-This provides a larger incentive for rich people to try to evade this systems by any means they can, which leads to scandals such as this one.
+Even though the numerical correlation is lower in this plot, we can better see a pattern visually. We observe that countries where the GDP is higher appear more often in the Panama Papers. Again, this is what we would intuitively predict. Richer countries usually have better infrastructure and therefore have a stronger tax collection system. This provides a larger incentive for rich people to try to evade these systems, which leads to scandals such as this one.
 
-### Impact of inequality
-In this section we will analyze if there is a correlation between the number of occurrences in the Panama papers and between two different indicators that try to quantify the inequality in a country.
-#### Gini
-The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person get the same income (When gini = 0).
+We want to see if it's really the countries that have greater inequality, with larger relative amounts of rich people that are present in the Panama Papers. To do so, we'll study correlations with two inequality indicators: the Gini coefficient and the income held by the richest 20% of the population.
 
-This time we directly show the scatter plot without the outliers by using the techniques we described above.
+#### Gini coefficient
+The Gini coefficient measures the inequality in the distribution of wealth in a country (lower coefficient means lower inequality). The most equal equal society is when every person has the same income, with a zero-value coefficient.
+
+This time we directly show the scatter plot having removed the outliers by using the techniques we described above.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gini_count_outlier.html"></iframe>
 {% endraw %}
 
-We can see that there is almost no correlation between those two variables as the plot and the numbers suggests. Which is surprising !
-Our initial assumption was that countries in which there is high levels of income inequality would be more heavily involved in this affair. As the tax evasion is higher in those countries,the wealth is less evenly redistributed.
+How strange. There is almost no correlation between the two variables as both the plot and the numerical correlation suggest. This is quite surprising, since our initial assumption was that countries in which there is greater levels of income inequality would be more heavily involved in this affair. We assumed that uneven wealth distribution is strongly correlated with greater tax evasion.
+
+Let's see if we have similar observations when looking at the income held by the richest 20% of the population.
 
 
-#### Income held by top 20%
-This index also measures inequality but it quantifies it differently by expressing the share of wealth held to the top 20% richest. We would expect similar results as for the Gini coefficient since both indices are measuring inequality.
+#### Income held by the richest 20%
+This index also measures inequality but it quantifies it differently, by expressing the share of wealth held by the richest 20% of the population. We would expect similar results as for the Gini coefficient since both indicators measure wealth inequality.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_20_count_outliers.html"></iframe>
 {% endraw %}
 
-As we can observe, there is almost no correlation which is coherent with what we observed for the Gini coefficient.  
-Unfortunately, we do not get anymore insight by using this metric when studying the involvement of a country in Panama Papers.
+We can see that there is almost no correlation between the involvement in Panama Papers and the wealth held by the richest people of a country, which is coherent with what we observed for the Gini coefficient. Unfortunately, we do not get anymore insight by using this metric when studying the involvement of a country in Panama Papers.
+
+We opt for a more traditional indicator of development, maybe we will find something there.
 
 #### Human Development Index (HDI)
 
-The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen to compute the index.  \
-We now observe if there is a correlation between the HDI and the number of occurrences in this affair.
+The HDI is used to represent how developed a country is, by considering the life expectancy, education level and GDP per capita of an average citizen to compute the index.
 
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_hdi_count_outlier.html"></iframe>
 {% endraw %}
 
+Both the plot and the numerical correlation suggest that there seems to be a correlation.
 
-There seems to be a correlation as the plot and the numbers suggest.
-This is map were we can best visually see the correlation. It seems that for an `HDI >= 0.65` there is a big increase in the number of occurrences in the Panama Papers.
+This is the most representative plot we have found thus far, where we can visually see a correlation. It seems that for an HDI that is greater than 0.65, which is often used to signify that a country is developed, there is a big increase in the number of occurrences in the Panama Papers.
 
-One of the reasons could be that a country with higher HDI have generally a better infrastructures to ensure that the tax are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
-Or maybe it is the case because richer people like to live in developed country? 
+One of the reasons for this could be that countries with higher HDI generally have better tax systems to ensure that taxes are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
 
+Or maybe it's simply that rich people prefer to live in developed countries? 
 
---- 
-In this section we studied the impact of socioeconomic factors in the way countries are involved in the Panama papers. We saw that we couldn't show that the degree of inequality within a country influenced how tied to this affair a country was. However we saw that there is a medium a correlation with the GDP per capita and with the HDI as well.
+---
+Having looked at multiple socioeconomic development indicators, we saw that the wealth inequality is not at all correlated to the presence of a country in Panama Papers, which was surprising. However, there is a noticeable correlation with a country's presence, when studying GDP per capita and HDI.
 
-
-We've studied the involvement of each country in Panama Papers, but we know that a significant part of the information about countries involved resides in how they interact with other countries involved in the affair. Let's have a look at how the countries interact, shall we?
+Maybe we can't find out much about the countries involved by studying socioeconomic indicators, but we are convinced that we can find a significant amount of information about countries involved by studying how they interact with other countries in the affair. Let's have a look at these links, shall we?
 
 ## Making connections
 
@@ -167,7 +162,7 @@ We want to know which country is at the center of most links. We display the int
 
 {% raw %}
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/international_links_network.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="600" src="../ressources/international_links_network.html"></iframe>
 
 {% endraw %}
 
@@ -177,4 +172,3 @@ Turns out Hong Kong is the most central country, closely followed by Switzerland
 
 ## So, where should we look?
 
-- 
