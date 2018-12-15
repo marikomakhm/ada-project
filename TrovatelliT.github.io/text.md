@@ -126,7 +126,8 @@ This index also measures inequality but it quantifies it differently by expressi
 
 As we can observe, there is almost no correlation which is coherent with what we said before.
 
-### Human Development Index (HDI)
+#### Human Development Index (HDI)
+
 The HDI index try to represent how well a country is developed by using the lifespan, the education level and the GDP per capita of an average citizen. \
 Let's see if there is a correlation between the HDI and the number of occurrence in this affair.
 
@@ -141,15 +142,29 @@ Let's see if there is a correlation between the HDI and the number of occurrence
 There seems to be a correlation as the plot and the Spearman coefficient suggest.
 One of the reasons could be that a country with higher HDI have generally a better infrastructures to ensure that the tax are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
 
+TODO: socioeconomic factors conclusion
+
+We've studied the involvement of each country in Panama Papers, but we know that a significant part of the information about countries involved resides in how they interact with other countries involved in the affair. Let's have a look at how the countries interact, shall we?
+
 ## International links
 
-Now that we've seen how the presence of a country in Panama Papers is correlated with multiple socioeconomic factors.
+One of the most representative measures of displaying international links is to do so on a world map. Below, we display a world map with undirected edges representing the number of connections between any two countries, with the width indicating the number of connections:
 
 {% raw %}
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/international_links_map.html"></iframe>
 
 {% endraw %}
+
+There is a clear transatlantic bridge being built between Central America and Central Europe. This isn't surprising, considering that a large number of tax havens are situated in Central America and the Channel Islands (todo: is this true), as well as Mossack Fonseca being based in Panama, and Switzerland's global tax haven reputation.
+
+There's also a noticeable edge between China and Hong Kong. Having studied the data, this is majorly due to over 20000 edges originating in China and going to Hong Kong, justifying the magnitude of the edge. Interestingly, China appears to significantly rely on Hong Kong for all business stuff (todo: find a word).
+
+Interestingly, we also see some "international link hubs", such as UAE, Seychelles and Samoa. (todo: what can we say about these countries)
+
+Although this representation of international edges gives us an idea of who interacts with whom in a geographic sense, it would be interesting to see which country is the most important one in terms of international transactions. We refer on a network representation of international links to answer this question.
+
+#### Who's at the center of it all?
 
 
 
