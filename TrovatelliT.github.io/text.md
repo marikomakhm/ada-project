@@ -1,8 +1,7 @@
----
 layout: page
 title: Data
 permalink: /datastory2/
----
+
 # Hide and seek: the money edition
 
 ## Introduction
@@ -19,9 +18,17 @@ We had a total of five Panama Papers datasets at our disposal. These datasets re
 - **Officers:** officers are people or companies that play some role in an offshore entity. These are typically shareholders and beneficiaries of the offshore companies.
 - **Intermediaries:** intermediaries are the lawyers and service providers who helped set up offshore entities.
 
-TODO: add diagram
+It's a bit tough to imagine this all, so here's an idea of how to picture the data:
+
+<figure>
+    <img src="/ressources/pp_diagram.jpeg" width="800"/>
+    <figcaption>Diagram representation of Panama Papers dataset (source: Neo4j)</figcaption>
+</figure>
+
+Now that we know what we have to work with, let's have a look at what it tells us.
 
 ## Which countries were involved?
+
 The very first question we asked ourselves was which countries were involved in the scandal and to what extent. Was it the usual suspects? Was it mostly rich countries? There are many ways of trying to compute their involvement, but our first attempt was to simply count the number of people and organizations involved and group them by country.  (TODO: bar chart) This yields the following table:
 
 {% raw %}
