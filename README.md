@@ -1,6 +1,7 @@
 # Hide and seek: the money edition
 
 Data story: https://trovatellit.github.io/datastory/
+The main notebook can be found at `/src/milestone_3.ipynb.`
 
 # Abstract
 
@@ -28,7 +29,7 @@ We are using the standard dataset that is already on the server. In this section
 The data are spread over 5 files:
 
 #### panama_papers.nodes.entity.csv
-Contains the list of all the offshore entites that were discovered. It contains dozens of fields but the following are really useful to us:
+Contains the list of all the offshore entities that were discovered. It contains dozens of fields but the following are really useful to us:
 - node ID: unique identification of the entity
 - juridiction: information about which juridiction is applied to the offshore company.
 - severals dates: incorporation dates, inactivation dates, etc.
@@ -45,7 +46,7 @@ The file contains the shareholders and the beneficiaries of the offshore compani
 - name: name of the officer
 
 #### panama_papers.nodes.address.csv
-Contains the address of the entities, officiers and intermediaries.
+Contains the address of the entities, officers and intermediaries.
 - node ID: unique identification of the address
 - address: full address. If we want to use it, we'll have to parse this field.
 - country code: country code of the address (string)
@@ -54,7 +55,7 @@ Contains the address of the entities, officiers and intermediaries.
 This is the most important file. It links all the above datasets together and allows us to understand the connections between them.
 
 - start ID: contains the start ID of an edge
-- end ID: contanis the end ID of an edge
+- end ID: contains the end ID of an edge
 - type of edge: describe the edges (intermediary of, registered address, etc.)
 
 ### Other datasets
