@@ -69,7 +69,9 @@ Now we will study the correlations between the amount of involvement in Panama P
 
 We obtained these datasets from the [United Nations](http://data.un.org/) and the [World Bank](https://data.worldbank.org/) open data websites.
 
-We will now display scatter plots, which will show the correlation of these different indicators with the number of occurrences in the Panama Papers to see if our intuition is correct. We decided to use the number of occurrences in the Panama Papers of a country normalized by its population size to avoid the bias brought by countries that have large populations, as discussed above.
+
+We will now display scatter plots, with which we will try to find correlation 
+with the number of occurrences in the Panama Papers. We decided to use the number of occurrences in the Panama Papers of a country normalized by its population size to avoid the bias brought by countries that have large populations, as discussed above.
 
 
 ### GDP per capita
@@ -81,7 +83,7 @@ Now, we'll have a look at the scatter plot of GDP vs number of occurrences norma
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count.html"></iframe>
 {% endraw %}
 
-There is no evident correlation even if the Spearman coefficient suggests it. Most of the countries have a relatively low number of occurrences in the Panama Papers and there are a few outliers that are significantly distorting the plot. Those outliers are again mainly either fiscal paradises or countries that were involved in Panama Papers for reasons of tax avoidance (British Virgin Islands, Luxembourg, Bermuda, etc.). As the plot shows the number of occurrences normalized by population, we would expect such countries to stand out because they have a small population and a very high involvement in the affair. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
+There is no evident correlation even if the numbers suggest it. Most of the countries have a relatively low number of occurrences in the Panama Papers and there are a few outliers that are significantly distorting the plot. Those outliers are again mainly either tax heavens or countries that were involved in Panama Papers for reasons of tax avoidance (British Virgin Islands, Luxembourg, Bermuda, etc.). As the plot shows the number of occurrences normalized by population, we would expect such countries to stand out because they have a small population and a very high involvement in the affair. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
 
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_outlier.html"></iframe>
