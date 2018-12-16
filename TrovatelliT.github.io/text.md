@@ -60,7 +60,7 @@ This data indeed is corroborated by many news [reports](https://www.transparency
 
 So, if population alone is not enough to explain the involvement of a country in Panama Papers, can other socioeconomic factors explain this? Let's have a look.
 
-## Why were the countries involved ?
+## Is it only the rich that are involved?
 We want to understand why some countries are more involved than others in this affair. To do so, we will study the correlations between the amount of involvement in Panama Papers of different countries and different socioeconomic development indicators. We considered several different socioeconomic factors, but ultimately we decided to focus on the following ones:
 - Human Development Index
 - GDP per capita
