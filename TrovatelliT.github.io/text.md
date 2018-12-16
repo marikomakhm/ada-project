@@ -78,7 +78,7 @@ GDP per capita is the value of all the goods and services produced by a country 
 Now, we'll have a look at the scatter plot of GDP vs number of occurrences normalized in the Panama Papers:
 {% raw %}
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count_normalized.html"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gdp_count.html"></iframe>
 {% endraw %}
 
 There is no evident correlation even if the Spearman coefficient suggests it. Most of the countries have a relatively low number of occurrences in the Panama Papers and there are a few outliers that are significantly distorting the plot. Those outliers are again mainly either fiscal paradises or countries that were involved in Panama Papers for reasons of tax avoidance (British Virgin Islands, Luxembourg, Bermuda, etc.). As the plot shows the number of occurrences normalized by population, we would expect such countries to stand out because they have a small population and a very high involvement in the affair. Since we are interested in finding general patterns, we'll remove the outliers to study the correlations for the majority of the countries.
@@ -100,7 +100,7 @@ This time we directly show the scatter plot having removed the outliers by using
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="500" src="../ressources/scatter_gini_count_outlier.html"></iframe>
 {% endraw %}
 
-How strange. There is almost no correlation between the two variables as both the plot and the numerical correlation suggest. This is quite surprising, since our initial assumption was that countries in which there is greater levels of income inequality would be more heavily involved in this affair. We assumed that uneven wealth distribution is strongly correlated with greater tax evasion.
+How strange. There is almost no correlation between the two variables as both the plot and the numerical correlation suggest. This is quite surprising, since our initial assumption was that countries in which there is greater levels of income inequality would be more heavily involved in this affair. We assumed that uneven wealth distribution is strongly correlated with greater tax evasion and thus with greater involvement in this affair.
 
 Let's see if we have similar observations when looking at the income held by the richest 20% of the population.
 
