@@ -24,7 +24,7 @@ It's a bit tough to imagine this all, so here's an idea of how to picture the da
     <figcaption>Diagram representation of Panama Papers dataset (source: Neo4j)</figcaption>
 </figure>
 
-Now that we know what we have to work with, let's have a look at what it tells us.
+Now that we know what we have to work with, let's have a look at what the data can tell us.
 
 ## Which countries were involved?
 
