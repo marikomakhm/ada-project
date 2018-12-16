@@ -2,7 +2,8 @@
 
 Data story: https://trovatellit.github.io/datastory/
 
-The main notebook can be found at `/src/milestone_3.ipynb.`
+The main notebook can be found at `/src/milestone_3.ipynb`  
+If you encounter problems when loading the charts/maps, please use the html file at `/src/milestone_3.html`
 
 # Abstract
 
