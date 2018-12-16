@@ -1,6 +1,7 @@
 # Hide and seek: the money edition
 
 Data story: https://trovatellit.github.io/datastory/
+
 The main notebook can be found at `/src/milestone_3.ipynb.`
 
 # Abstract
@@ -78,7 +79,6 @@ Each of these datasets contains relevant data, dating from at least 2011 onwards
 
 We intend to clean these datasets, extracting the information that interests us. Something that is going to be crucial in our data processing is choosing consistent country names, as countries can be recorded differently, for instance "Iran" can be recorded as "Islamic Republic of Iran". We will base this on the country name provided in the `panama_papers.nodes.address.csv` file.
 
-
 # Individual work
 
 All members discussed the various results and collaborated on writing and reviewing both the data story and notebook.
@@ -103,3 +103,7 @@ Each member also individually worked on the following tasks:
   - Create several visualizations to display these results
   - Create methods to remove statistical outliers
   - Create the website
+
+#### Final presentation
+
+Everyone will work on the final poster, and Pedro will speak for the presentation.
