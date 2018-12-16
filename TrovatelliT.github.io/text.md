@@ -60,7 +60,7 @@ This data indeed is corroborated by many news [reports](http://www.independent.c
 
 So, if population alone is not enough to explain the involvement of a country in Panama Papers, can other socioeconomic factors explain this? Let's have a look.
 
-## Socioeconomic factors
+## Socioeconomic indicators
 Now we will study the correlations between the amount of involvement in Panama Papers of different countries and different socioeconomic development indicators. We considered several different socioeconomic factors, but ultimately we decided to focus on the following ones:
 - Human Development Index
 - GDP per capita
@@ -149,9 +149,9 @@ One of the most representative measures of displaying international links is usi
 
 There is a clear transatlantic bridge being built between Central America and Central Europe. This isn't surprising, considering that a large number of tax havens are situated in Central America and the Channel Islands, as well as Mossack Fonseca being based in Panama, and Switzerland's global tax haven reputation.
 
-There's also a noticeable edge between China and Hong Kong. Having studied the data, this is majorly due to over 20000 edges originating in China and going to Hong Kong, justifying the magnitude of the edge. Having studied the types of links that originate in China and go to Hong Kong, it turns out that most of the links represent officers that are based in China, with their businesses in Hong Kong. This isn't unexpected, since Hong Kong is the closest tax haven to China, both in geographical and cultural terms, so Chinese businessmen would prefer to do their business in Hong Kong, rather than Panama, on the other side of the globe.
+There's also a noticeable edge between China and Hong Kong. Having studied the data, this is majorly due to over 20000 edges originating in China and going to Hong Kong, justifying the magnitude of the edge. Having studied the types of links that originate in China and go to Hong Kong, it turns out that most of the links represent officers that are based in China, with their businesses in Hong Kong. This isn't unexpected, since Hong Kong has quite low taxes, making it optimal for Chinese businessmen to base their businesses there, as it is close to China, both in geographical and cultural terms.
 
-Interestingly, we also see some "international link hubs", such as UAE, Seychelles and Samoa. (TODO: what can we say about these countries)
+Interestingly, we also see some "international link hubs", such as UAE, Seychelles and Samoa. These make sense, since Samoa and Seychelles are known for their tax haven reputations, and UAE is one of the largest international business hubs in the world, justifying a large number of international links.
 
 Although this representation of international edges gives us an idea of who interacts with whom in a geographic sense, it would be interesting to see which country is the most important one in terms of international transactions. We refer on a network representation of international links to answer this question.
 
@@ -167,7 +167,16 @@ We want to know which country is at the center of most links. We display the int
 
 It looks like Christmas!
 
-Turns out Hong Kong is the most central country, closely followed by Switzerland, and then the UK. Having seen the variety of international connections going through these countries in the previous graph, it isn't surprising. What we didn't expect, however, was that the next three largest nodes would be UAE, Russia and Jersey. China is barely even visible, as well as Panama, with low centrality.
+Turns out Hong Kong is the most central country, closely followed by Switzerland, and then the UK. Having seen the variety of international connections going through these countries in the previous graph, it isn't surprising. What we didn't expect, however, was that the next three largest nodes would be UAE, Russia and Jersey.
+
+It is also surprising that both China and Panama have low centrality, and are thus barely visible on the network. Granted, having observed that China mainly interacts with Hong Kong, it makes sense for China to be significantly less central than Hong Kong.
 
 ## So, where should we look?
 
+We've had a thorough look at the countries involved in Panama Papers from a variety of perspectives. We've studied the involvement of countries with respect to population size, studied the development and inequality levels of the countries and we've studied how the countries interact with each other. Overall, we've spotted a couple of major countries recurring in our different analyses:
+
+1. The commonwealth countries had a significant role in the Panama Papers, having the highest involvement per capita
+2. More developed and richer countries generally tend to be more involved in the affair, regardless of the income inequality
+3. Countries with low tax for foreigners, such as Switzerland and Hong Kong, tend to be more central in the Panama Papers.
+
+It seems that we were right, it really is the rich countries that were at the root of it all. At least now we know where to store our money.
