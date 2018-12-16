@@ -56,12 +56,12 @@ On the map, we also see that there is a significant presence of geographically l
 
 This data is much easier to interpret. We see that almost all of the countries on the top 15 list are countries that are typically known as "tax-havens", such as Seychelles, Cayman and Bermuda. We see however that all of them are dwarfed by the British Virgin Islands. For such a small island, being on both top 15 lists shows that it was surely heavily involved in this affair.
 
-This data indeed is corroborated by many news [reports](http://www.independent.com.mt/articles/2016-04-18/world-news/Panama-Papers-Tiny-British-Virgin-Islands-has-big-role-in-leaked-documents-6736156470) (FIND BETTER SOURCE), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
+This data indeed is corroborated by many news [reports](https://www.transparency.org/news/feature/british_virgin_islands_have_they_cleaned_up_since_the_panama_papers), which seem to suggest that Panama, Switzerland, United Kingdom and many Commonwealth islands, particularly British Virgin Islands, were the countries most heavily involved in setting up this whole scheme.
 
 So, if population alone is not enough to explain the involvement of a country in Panama Papers, can other socioeconomic factors explain this? Let's have a look.
 
-## Why were the countries involved ? 
-We'll try to understand why some countries are more involved than other in this scandal. To do so, we will study the correlations between the amount of involvement in Panama Papers of different countries and different socioeconomic development indicators. We considered several different socioeconomic factors, but ultimately we decided to focus on the following ones:
+## Why were the countries involved ?
+We want to understand why some countries are more involved than others in this affair. To do so, we will study the correlations between the amount of involvement in Panama Papers of different countries and different socioeconomic development indicators. We considered several different socioeconomic factors, but ultimately we decided to focus on the following ones:
 - Human Development Index
 - GDP per capita
 - Gini coefficient
@@ -70,7 +70,7 @@ We'll try to understand why some countries are more involved than other in this 
 We obtained these datasets from the [United Nations](http://data.un.org/) and the [World Bank](https://data.worldbank.org/) open data websites.
 
 
-We will now display scatter plots, with which we will try to find correlation 
+We will now display scatter plots, with which we will try to find correlation
 with the number of occurrences in the Panama Papers. We decided to use the number of occurrences in the Panama Papers of a country normalized by its population size to avoid the bias brought by countries that have large populations, as discussed above.
 
 
@@ -133,7 +133,7 @@ This is the most representative plot we have found thus far, where we can visual
 
 One of the reasons for this could be that countries with higher HDI generally have better tax systems to ensure that taxes are paid. Additionally, a country with higher HDI is home to richer people since the GDP per capita is also taken into account in the calculation of the HDI.
 
-Or maybe it's simply that rich people prefer to live in developed countries? 
+Or maybe it's simply that rich people prefer to live in developed countries?
 
 Having looked at multiple socioeconomic development indicators, we saw that the wealth inequality is not at all correlated to the presence of a country in Panama Papers, which was surprising. However, there is a noticeable correlation with a country's presence, when studying GDP per capita and HDI.
 
