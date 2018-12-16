@@ -4,19 +4,18 @@
 
 The Panama Papers are a collection of leaked documents revealing that a large number of offshore entities had been used for fraud, evading international sanctions and large-scale tax evasion. A majority of these entities are linked to well-known public figures, from politicians to footballers. Many of these politicians were even directly involved in fighting tax evasion in their own country, showing a level of hypocrisy and corruption never seen before. But how far does this scandal go, and which countries have been most affected by it?
 
-In this project, we will study which countries the people implicated in the Panama Papers come from and investigate the correlation with development indicators of these countries, using UN and World Bank datasets. We will be using indicators such as the Gini coefficient or the GDP per capita at PPP to attempt to explain the distribution of the number of entities involved in Panama Papers in each country. By studying the patterns of the countries involved in Panama Papers, we hope to better understand how to construct a healthier, more honest society.
+In this project, we will study which countries the people implicated in the Panama Papers come from and investigate the correlation with development indicators of these countries, using UN and World Bank datasets. We will be using indicators such as the Gini coefficient, GDP per capita, Human Developement index and percentage of wealth owned by the Top 20% to attempt to explain the distribution of the number of entities involved in Panama Papers in each country. By studying the patterns of the countries involved in Panama Papers, we hope to better understand what made it possible for this large scandal to take place and how to prevent it in the future.
 
 # Research questions
 We would like to address the following research questions:
 
-- which countries have the most and least tax evasion?
-- what does the distribution of the entities involved in Panama Papers look like?
-- to what extent are we able to link the proportion of entities involved in Panama Papers with:
-  - the political structure of a country?
+- which countries were most heavily involved in this affair and what role did they play?
+- to what extent are we able to link the involvement in Panama Papers with:
+  - the GDP of a country?
   - the internal inequality within a country?
-  - the development (HDI, Gini coefficient) of a country?
-- are we able to link any of the trends with political events?
-- to what extent are we able to see a change in geographical location of entities involved in the scandal though time?
+  - the development (HDI) of a country?
+- what are the links between the countries?
+- does the data back previous reports about the Panama papers?
 
 # Dataset
 
@@ -33,7 +32,7 @@ Contains the list of all the offshore entites that were discovered. It contains 
 - severals dates: incorporation dates, inactivation dates, etc.
 
 #### panama_papers.nodes.intermediary.csv
-This file contains the lawyers and service providers who helped setting up offshore companies. 
+This file contains the lawyers and service providers who helped setting up offshore companies.
 - node ID: unique identification of the intermediary
 - country: country of the intermediary
 - status: indicates whether the company is still active
@@ -76,21 +75,26 @@ Each of these datasets contains relevant data, dating from at least 2011 onwards
 
 We intend to clean these datasets, extracting the information that interests us. Something that is going to be crucial in our data processing is choosing consistent country names, as countries can be recorded differently, for instance "Iran" can be recorded as "Islamic Republic of Iran". We will base this on the country provided in the `panama_papers.nodes.address.csv` file.
 
-# A list of internal milestones up until project milestone 2
 
-Here is the plan for the next project milestone:
-- Merge the datasets taken from the UN and World Bank on the country of interest
-- Visualize the country of origin of the people involved in Panama Papers
-- Visualize the development indicators taken from UN/WB datasets for each country
-- Analyze links between the data from the UN/WB and Panama Papers countries using visual and numerical tools
+# Individual work
+All members discussed the various results and collaborated on writing and reviewing both the data story and notebook.
 
-# A list of internal milestones up until project milestone 3
-- Find which socio-economic factors are correlated with the results we found so far, and how they are correlated
-- Display the links between the countries using a graph similar to the one found [here](https://plot.ly/python/lines-on-maps/)
-- Fix issues with certain countries (particularly small islands) not being displayed in the graph
-- Create better way of visualizing the data
+Each member also individually worked on the following tasks:
 
-
-# Questions for TA
-
-No questions just yet! :smile: 
+- Mariko
+  - Clean data
+  - Look into different libraries for analysis and representation of graphs
+  - Create map plot representation showing the links between different countries
+  - Create visualization of the network, showing the links between the nodes as well as their importance
+- Pedro
+  - Research media reports
+  - Load and clean data
+  - Merge different datasets
+  - Normalize the data by the various socio-economic factors
+  - Look into different libraries for visualization of world maps
+  - Create map plot representations of number of occurrences
+- Timothy
+  - Analyse the correlation between the number of occurrences and various socio-economic factors
+  - Create several visualizations to display this results
+  - Create methods to remove statistical outliers
+  - Create the website
